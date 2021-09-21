@@ -144,6 +144,10 @@
         <DCCReference Include="src\model\entidades\uUser.pas"/>
         <DCCReference Include="src\model\uDAOGenerico.pas"/>
         <DCCReference Include="src\controler\uUsers.pas"/>
+        <DCCReference Include="src\controler\uCategorias.pas"/>
+        <DCCReference Include="src\controler\uProdutos.pas"/>
+        <DCCReference Include="src\model\entidades\uCategoria.pas"/>
+        <DCCReference Include="src\model\entidades\uProduto.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

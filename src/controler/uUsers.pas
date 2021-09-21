@@ -3,7 +3,10 @@ unit uUsers;
 interface
 
 uses
-  Horse, system.JSON;
+  Horse,
+  system.JSON,
+  uDAOGenerico,
+  uUser;
 
 procedure Registry(App : THorse);
 procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -13,8 +16,6 @@ procedure Update(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure Delete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 
 implementation
-
-uses uDAOGenerico, uUser;
 
 procedure Registry(App : THorse);
 begin

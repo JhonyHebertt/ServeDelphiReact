@@ -1,18 +1,25 @@
-unit uDAOGenerico;
+unit ServerReact.Model.DAOGeneric;
 
 interface
 
 uses
-  System.JSON, REST.Json, SimpleInterface, SimpleDAO, SimpleAttributes,
-  System.RTTI, System.Generics.Collections, System.Classes, SimpleQueryFireDac,
-  Data.DB, System.SysUtils, System.TypInfo, SimpleRTTI, SimpleSQL, DataSetConverter4D,
-  DataSetConverter4D.Impl, DataSetConverter4D.Helper, DataSetConverter4D.Util;
-
+  System.JSON,
+  REST.Json,
+  SimpleInterface,
+  SimpleDAO,
+  SimpleAttributes,
+  SimpleQueryFiredac,
+  Data.DB,
+  DataSetConverter4D,
+  DataSetConverter4D.Impl,
+  DataSetConverter4D.Helper,
+  DataSetConverter4D.Util;
 
 type
+
   iDAOGeneric<T : class> = interface
-    ['{717F0AA7-60E6-4939-9575-524DA74EC8B3}']
-function Find : TJsonArray; overload;
+    ['{1DAE62A0-0C6E-4FA6-BF9E-2377A25F267C}']
+    function Find : TJsonArray; overload;
     function Find (const aID : String ) : TJsonObject; overload;
     function Insert (const aJsonObject : TJsonObject) : TJsonObject;
     function Update (const aJsonObject : TJsonObject) : TJsonObject;
@@ -45,13 +52,13 @@ implementation
 
 { TDAOGeneric<T> }
 
-uses uServerReactModelConnection;
+uses ServerReact.Model.Connection, System.SysUtils;
 
 constructor TDAOGeneric<T>.Create;
 begin
   FDataSource := TDataSource.Create(nil);
-  uServerReactModelConnection.Connected;
-  FConn := TSimpleQueryFiredac.New(uServerReactModelConnection.FConn);
+  ServerReact.Model.Connection.Connected;
+  FConn := TSimpleQueryFiredac.New(ServerReact.Model.Connection.FConn);
   FDAO := TSimpleDAO<T>.New(FConn).DataSource(FDataSource);
 end;
 
@@ -79,7 +86,7 @@ end;
 destructor TDAOGeneric<T>.Destroy;
 begin
   FDataSource.Free;
-  uServerReactModelConnection.Disconnected;
+  ServerReact.Model.Connection.Disconnected;
   inherited;
 end;
 

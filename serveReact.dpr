@@ -13,7 +13,11 @@ uses
   uServerReactModelConnection in 'src\model\uServerReactModelConnection.pas',
   uUser in 'src\model\entidades\uUser.pas',
   uDAOGenerico in 'src\model\uDAOGenerico.pas',
-  uUsers in 'src\controler\uUsers.pas';
+  uUsers in 'src\controler\uUsers.pas',
+  uCategorias in 'src\controler\uCategorias.pas',
+  uProdutos in 'src\controler\uProdutos.pas',
+  uCategoria in 'src\model\entidades\uCategoria.pas',
+  uProduto in 'src\model\entidades\uProduto.pas';
 
 Var
   App: THorse;
@@ -32,14 +36,8 @@ begin
 
   //controler de entidade/classes
   uUsers.Registry(App);
-
-  App.Get('/ping',
-    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
-    begin
-      uServerReactModelConnection.Connected;
-      uServerReactModelConnection.Disconnected;
-      Res.Send('<h1>Pong...</h1>');
-    end);
+  uCategorias.Registry(App);
+  uProdutos.Registry(App);
 
 //  App.Listen(9000);
   App.start;
