@@ -11,9 +11,9 @@ uses
   Horse.Jhonson,
   Horse.CORS,
   uServerReactModelConnection in 'src\model\uServerReactModelConnection.pas',
-  uUser in 'src\model\entidades\uUser.pas',
+  uUsuario in 'src\model\entidades\uUsuario.pas',
   uDAOGenerico in 'src\model\uDAOGenerico.pas',
-  uUsers in 'src\controler\uUsers.pas',
+  uUsuarios in 'src\controler\uUsuarios.pas',
   uCategorias in 'src\controler\uCategorias.pas',
   uProdutos in 'src\controler\uProdutos.pas',
   uCategoria in 'src\model\entidades\uCategoria.pas',
@@ -35,7 +35,7 @@ begin
   App.Use(CORS);
 
   //controler de entidade/classes
-  uUsers.Registry(App);
+  uUsuarios.Registry(App);
   uCategorias.Registry(App);
   uProdutos.Registry(App);
 

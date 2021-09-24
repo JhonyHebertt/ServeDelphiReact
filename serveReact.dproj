@@ -141,9 +141,9 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="src\model\uServerReactModelConnection.pas"/>
-        <DCCReference Include="src\model\entidades\uUser.pas"/>
+        <DCCReference Include="src\model\entidades\uUsuario.pas"/>
         <DCCReference Include="src\model\uDAOGenerico.pas"/>
-        <DCCReference Include="src\controler\uUsers.pas"/>
+        <DCCReference Include="src\controler\uUsuarios.pas"/>
         <DCCReference Include="src\controler\uCategorias.pas"/>
         <DCCReference Include="src\controler\uProdutos.pas"/>
         <DCCReference Include="src\model\entidades\uCategoria.pas"/>
@@ -172,6 +172,12 @@
             <Deployment Version="3">
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\serveReact.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>serveReact.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

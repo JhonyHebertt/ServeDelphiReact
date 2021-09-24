@@ -20,11 +20,11 @@ implementation
 
 procedure Registry(App: THorse);
 begin
-  App.Get('/produto', Get);
-  App.Get('/produto/:id', GetID);
-  App.Post('/produto', Insert);
-  App.Put('/produto/:id', Update);
-  App.Delete('/produto/:id', Delete);
+  App.Get('/produtos', Get);
+  App.Get('/produtos/:id', GetID);
+  App.Post('/produtos', Insert);
+  App.Put('/produtos/:id', Update);
+  App.Delete('/produtos/:id', Delete);
 end;
 
 procedure Insert(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -44,9 +44,9 @@ begin
   FDAO
     .DAO
     .SQL
-      .Fields('PRODUTO.ID, PRODUTO.DESCRICAO, PRODUTO.CATEGORIA, PRODUTO.PRECO, CATEGORIA.DESCRICAO AS CATEGORIA_DESCRICAO')
-      .Join('INNER JOIN CATEGORIA ON PRODUTO.CATEGORIA = CATEGORIA.ID')
-      .Where('PRODUTO.ID = ' + Req.Params.Items['id'])
+      .Fields('produtos.ID, produtos.DESCRICAO, produtos.CATEGORIA, produtos.PRECO, categorias.DESCRICAO AS CATEGORIA_DESCRICAO')
+      .Join('INNER JOIN categorias ON produtos.CATEGORIA = categorias.ID')
+      .Where('produtos.ID = ' + Req.Params.Items['id'])
     .&End
   .Find;
 
@@ -62,8 +62,8 @@ begin
   FDAO
     .DAO
     .SQL
-      .Fields('PRODUTO.ID, PRODUTO.DESCRICAO, PRODUTO.CATEGORIA, PRODUTO.PRECO, CATEGORIA.DESCRICAO AS CATEGORIA_DESCRICAO')
-      .Join('INNER JOIN CATEGORIA ON PRODUTO.CATEGORIA = CATEGORIA.ID')
+      .Fields('produtos.ID, produtos.DESCRICAO, produtos.CATEGORIA, produtos.PRECO, categorias.DESCRICAO AS CATEGORIA_DESCRICAO')
+      .Join('INNER JOIN categorias ON produtos.CATEGORIA = categorias.ID')
     .&End
   .Find;
 

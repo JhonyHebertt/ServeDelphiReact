@@ -19,11 +19,11 @@ implementation
 
 procedure Registry(App: THorse);
 begin
-  App.Get('/categoria', Get);
-  App.Get('/categoria/:id', GetID);
-  App.Post('/categoria', Insert);
-  App.Put('/categoria/:id', Update);
-  App.Delete('/categoria/:id', Delete);
+  App.Get('/categorias', Get);
+  App.Get('/categorias/:id', GetID);
+  App.Post('/categorias', Insert);
+  App.Put('/categorias/:id', Update);
+  App.Delete('/categorias/:id', Delete);
 end;
 
 procedure Insert(Req: THorseRequest; Res: THorseResponse; Next: TProc);

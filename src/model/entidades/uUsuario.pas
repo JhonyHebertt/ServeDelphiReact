@@ -1,12 +1,12 @@
-unit uUser;
+unit uUsuario;
 
 interface
 
 uses SimpleAttributes;
 
 type
-  [Tabela('users')]
-  TUSER = Class
+  [Tabela('usuarios')]
+  TUSUARIO = Class
     private
     FID: Integer;
     FSTATUS: Integer;
@@ -33,35 +33,35 @@ type
 
 implementation
 
-{ TUSER }
+{ TUSUARIO }
 
-constructor TUSER.Created;
+constructor TUSUARIO.Created;
 begin
 
 end;
 
-destructor TUSER.Destroy;
+destructor TUSUARIO.Destroy;
 begin
 
   inherited;
 end;
 
-procedure TUSER.SetID(const Value: Integer);
+procedure TUSUARIO.SetID(const Value: Integer);
 begin
   FID := Value;
 end;
 
-procedure TUSER.SetPASSWORD(const Value: String);
+procedure TUSUARIO.SetPASSWORD(const Value: String);
 begin
   FPASSWORD := Value;
 end;
 
-procedure TUSER.SetSTATUS(const Value: Integer);
+procedure TUSUARIO.SetSTATUS(const Value: Integer);
 begin
   FSTATUS := Value;
 end;
 
-procedure TUSER.SetUSERNAME(const Value: String);
+procedure TUSUARIO.SetUSERNAME(const Value: String);
 begin
   FUSERNAME := Value;
 end;

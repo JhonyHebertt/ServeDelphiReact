@@ -6,7 +6,7 @@ uses
   SimpleAttributes;
 
 type
-  [Tabela('categoria')]
+  [Tabela('categorias')]
   TCATEGORIA = class
     private
     FDESCRICAO: String;

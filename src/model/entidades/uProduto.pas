@@ -5,7 +5,7 @@ interface
 uses SimpleAttributes;
 
 type
-  [Tabela('produto')]
+  [Tabela('produtos')]
   TPRODUTO = class
     private
     FPRECO: Currency;
