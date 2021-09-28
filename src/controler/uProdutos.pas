@@ -41,12 +41,16 @@ var
 begin
   FDAO := TDAOGeneric<TPRODUTO>.New;
 
+  //sem relacionamento
+  //Res.Send<TJSONObject>(FDAO.find(Req.Params.Items['id']));
+
+  //com relacionamento
   FDAO
     .DAO
     .SQL
       .Fields('produtos.ID, produtos.DESCRICAO, produtos.CATEGORIA, produtos.PRECO, categorias.DESCRICAO AS CATEGORIA_DESCRICAO')
-      .Join('INNER JOIN categorias ON produtos.CATEGORIA = categorias.ID')
       .Where('produtos.ID = ' + Req.Params.Items['id'])
+      .Join('LEFT JOIN categorias ON produtos.CATEGORIA = categorias.ID')
     .&End
   .Find;
 
@@ -59,11 +63,15 @@ var
 begin
   FDAO := TDAOGeneric<TPRODUTO>.New;
 
+  //SEM RELACIONAMENTO
+  //Res.Send<TJsonArray>(FDAO.Find);
+
+  //COM RELACIONAMENTO
   FDAO
     .DAO
     .SQL
       .Fields('produtos.ID, produtos.DESCRICAO, produtos.CATEGORIA, produtos.PRECO, categorias.DESCRICAO AS CATEGORIA_DESCRICAO')
-      .Join('INNER JOIN categorias ON produtos.CATEGORIA = categorias.ID')
+      .Join('LEFT JOIN categorias ON produtos.CATEGORIA = categorias.ID')
     .&End
   .Find;
 
