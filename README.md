@@ -1,2 +1,2 @@
 # ServeDelphiReact
- Serve Delphi em Horse para React
+ Serve em Delphi com Horse para React
