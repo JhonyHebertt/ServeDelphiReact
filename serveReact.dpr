@@ -10,6 +10,7 @@ uses
   Horse,
   Horse.Jhonson,
   Horse.CORS,
+  Horse.JWT,
   uServerReactModelConnection in 'src\model\uServerReactModelConnection.pas',
   uUsuario in 'src\model\entidades\uUsuario.pas',
   uDAOGenerico in 'src\model\uDAOGenerico.pas',
@@ -24,8 +25,10 @@ Var
 begin
 
   try
-    App:= THorse.create(9000);
+    if THorse.IsRunning then
+      THorse.StopListen;
 
+    App:= THorse.create(9000);
   Except
     THorse.StopListen;
   end;
@@ -33,6 +36,7 @@ begin
 
   App.Use(Jhonson);
   App.Use(CORS);
+  App.Use(HorseJWT('DELPHIREACT'));
 
   //controler de entidade/classes
   uUsuarios.Registry(App);

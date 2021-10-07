@@ -20,6 +20,7 @@ function Find : TJsonArray; overload;
     function DAO : ISimpleDAO<T>;
     function DataSetAsJsonArray : TJsonArray;
     function DataSetAsJsonObject : TJsonObject;
+    function DataSet : TDataSet;
   end;
 
   TDAOGeneric<T : class, constructor> = class(TInterfacedObject, iDAOGeneric<T>)
@@ -39,6 +40,7 @@ function Find : TJsonArray; overload;
     function DAO : ISimpleDAO<T>;
     function DataSetAsJsonArray : TJsonArray;
     function DataSetAsJsonObject : TJsonObject;
+    function DataSet : TDataSet;
   end;
 
 implementation
@@ -58,6 +60,11 @@ end;
 function TDAOGeneric<T>.DAO: ISimpleDAO<T>;
 begin
   Result := FDAO;
+end;
+
+function TDAOGeneric<T>.DataSet: TDataSet;
+begin
+  Result := FDataSource.DataSet;
 end;
 
 function TDAOGeneric<T>.DataSetAsJsonArray: TJsonArray;

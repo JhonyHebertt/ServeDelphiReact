@@ -20,13 +20,14 @@ implementation
 function Connected : TFDConnection;
 begin
  FConn:= TFDConnection.Create(nil);
- FConn.params.DriverID:='Mysql';
+
  {FConn.params.Database:='delphireact';
  FConn.params.UserName:='admin';
  FConn.params.Password:='admin777';
  FConn.params.Add('Port=3306');
  FConn.params.add('Server=delphireact.cm7ojuhyicsr.sa-east-1.rds.amazonaws.com');}
 
+ FConn.params.DriverID:='Mysql';
  FConn.params.Database:='dbReact';
  FConn.params.UserName:='root';
  FConn.params.Password:='';

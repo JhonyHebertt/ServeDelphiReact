@@ -1,12 +1,13 @@
-unit uUsuario;
+unit uUSUARIO;
 
 interface
 
-uses SimpleAttributes;
+uses
+  SimpleAttributes;
 
 type
   [Tabela('usuarios')]
-  TUSUARIO = Class
+  TUSUARIO = class
     private
     FID: Integer;
     FSTATUS: Integer;
@@ -17,25 +18,25 @@ type
     procedure SetSTATUS(const Value: Integer);
     procedure SetUSERNAME(const Value: String);
     public
-      constructor Created;
+      constructor Create;
       destructor Destroy; override;
     published
-     [Campo('ID'), PK, AutoInc]
-     property ID : Integer read FID write SetID;
-     [Campo('USERNAME'), ]
-     property USERNAME : String read FUSERNAME write SetUSERNAME;
-     [Campo('PASSWORD'), ]
-     property PASSWORD :String read FPASSWORD write SetPASSWORD;
-     [Campo('STATUS'), ]
-     property STATUS : Integer read FSTATUS write SetSTATUS;
-
+      [Campo('ID'), Pk, AutoInc]
+      property ID : Integer read FID write SetID;
+      [Campo('USERNAME')]
+      property USERNAME : String read FUSERNAME write SetUSERNAME;
+      [Campo('PASSWORD')]
+      property PASSWORD : String read FPASSWORD write SetPASSWORD;
+      [Campo('STATUS')]
+      property STATUS : Integer read FSTATUS write SetSTATUS;
   end;
+
 
 implementation
 
 { TUSUARIO }
 
-constructor TUSUARIO.Created;
+constructor TUSUARIO.Create;
 begin
 
 end;

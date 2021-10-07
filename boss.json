@@ -9,8 +9,11 @@
 		"github.com/bittencourtthulio/simpleorm": "^2.02.05",
 		"github.com/hashload/horse": "^2.0.13",
 		"github.com/hashload/horse-cors": "^1.0.3",
+		"github.com/paolo-rossi/delphi-jose-jwt": "^v3.0.2",
 		"https://github.com/bittencourtthulio/simpleorm": "^2.02.05",
 		"https://github.com/ezequieljuliano/datasetconverter4delphi": ">0.0.0",
-		"https://github.com/hashload/jhonson": "^1.1.2"
+		"https://github.com/hashload/horse-jwt": "^2.0.4",
+		"https://github.com/hashload/jhonson": "^1.1.2",
+		"https://github.com/viniciussanchez/bcrypt": "^1.0.5"
 	}
 }
