@@ -4,16 +4,16 @@
 	"installedModules": {
 		"github.com/bittencourtthulio/simpleorm": {
 			"name": "simpleorm",
-			"version": "2.02.05",
-			"hash": "3f066180a3c866aff3d96c0922557f0f",
+			"version": "2.02.08",
+			"hash": "a8575a0a33be08c90486b9d6122783f5",
 			"artifacts": {},
 			"failed": false,
-			"changed": false
+			"changed": true
 		},
 		"github.com/hashload/horse": {
 			"name": "horse",
-			"version": "2.0.13",
-			"hash": "985da2054d3c705bc211797c653e47ba",
+			"version": "v2.0.14",
+			"hash": "ddcf53c9ae2aa918b279edaa5b7cbb83",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -36,11 +36,11 @@
 		},
 		"https://github.com/bittencourtthulio/simpleorm": {
 			"name": "simpleorm",
-			"version": "2.02.05",
-			"hash": "3f066180a3c866aff3d96c0922557f0f",
+			"version": "2.02.08",
+			"hash": "a8575a0a33be08c90486b9d6122783f5",
 			"artifacts": {},
 			"failed": false,
-			"changed": true
+			"changed": false
 		},
 		"https://github.com/ezequieljuliano/datasetconverter4delphi": {
 			"name": "datasetconverter4delphi",

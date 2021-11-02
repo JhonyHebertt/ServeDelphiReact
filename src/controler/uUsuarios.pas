@@ -3,15 +3,8 @@ unit uUSUARIOS;
 interface
 
 uses
-  Horse,
-  BCrypt,
-  JOSE.Core.JWT,
-  JOSE.Core.Builder,
-  JOSE.Types.JSON,
-  SysUtils,
-  System.JSON,
-  uDAOGenerico,
-  uUSUARIO;
+  Horse, BCrypt, JOSE.Core.JWT, JOSE.Core.Builder, JOSE.Types.JSON, SysUtils,
+  System.JSON, uDAOGenerico, uUSUARIO;
 
 procedure Registry(App : THorse);
 procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -76,8 +69,8 @@ var
 begin
   FDAO := TDAOGeneric<TUSUARIO>.New;
   aJsonUser := Req.Body<TJsonObject>;
-  LHash := TBCrypt.GenerateHash(aJsonUser.GetValue<String>('PASSWORD'));
-  aJsonUser.Get('PASSWORD').JsonValue := TJsonString.Create(LHash);
+  LHash := TBCrypt.GenerateHash(aJsonUser.GetValue<String>('PASSWORD')); //pega o PASSWORD informado no json e criptografa ele
+  aJsonUser.Get('PASSWORD').JsonValue := TJsonString.Create(LHash);      //depois pega esse hash gerado e substitui dentro do json
   Res.Send<TJSONObject>(FDAO.Insert(aJsonUser));
 end;
 

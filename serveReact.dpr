@@ -33,9 +33,8 @@ begin
     THorse.StopListen;
   end;
 
-
-  App.Use(Jhonson);
   App.Use(CORS);
+  App.Use(Jhonson);
   App.Use(HorseJWT('DELPHIREACT'));
 
   //controler de entidade/classes
